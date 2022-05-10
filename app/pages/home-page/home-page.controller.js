@@ -1,9 +1,9 @@
 angular.module('appModule').controller('homeController', homePageController);
 
-function homePageController(Employees, $scope) {
+function homePageController(Employees, $scope, $stateParams, $location) {
   const homePageVm = this;
   homePageVm.employees = [];
-  homePageVm.search = '';
+  homePageVm.filter = $stateParams.filter;
 
   homePageVm.$onInit = function () {
     homePageVm.activate();
@@ -17,10 +17,10 @@ function homePageController(Employees, $scope) {
 
   /**
    *
-   * @param {string} search
+   * @param {string} filter
    */
-  homePageVm.updateSearch = function (search) {
-    homePageVm.search = search;
+  homePageVm.updateFilter = function (filter) {
+    $location.search({ filter });
     $scope.$apply();
   };
 }

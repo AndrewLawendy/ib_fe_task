@@ -1,6 +1,6 @@
 <template>
   <div class="c-users-filter">
-    <input v-model="filter" v-on:input="handleChange" />
+    <input v-model="filterInput" v-on:input="handleChange" />
     <button class="c-button" v-on:click="clear">Clear</button>
   </div>
 </template>
@@ -10,21 +10,23 @@ export default {
   name: 'EmployeesFilterComponent',
   props: {
     update: Function,
+    filter: String,
   },
 
   data() {
     return {
-      filter: '',
+      filterInput: this.filter,
     };
   },
 
   methods: {
     clear() {
-      this.filter = '';
+      this.filterInput = '';
+      this.update();
     },
 
     handleChange() {
-      this.update(this.filter);
+      this.update(this.filterInput || undefined);
     },
   },
 };
