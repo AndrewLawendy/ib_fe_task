@@ -20,6 +20,7 @@ function homePageController(Employees, $scope, $stateParams, $location) {
    * @param {string} filter
    */
   homePageVm.updateFilter = function (filter) {
+    homePageVm.filter = filter;
     $location.search({ filter });
     $scope.$apply();
   };
