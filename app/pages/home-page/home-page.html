@@ -1,13 +1,18 @@
 <div class="c-dashboard">
   <div class="c-filters__container">
-    [Place search component here]
+    <vue-component
+      name="EmployeesFilter"
+      v-props-update="homePageVm.updateFilter"
+      v-props-filter="homePageVm.filter"
+    />
   </div>
 
-  <employees-list employees-list="homePageVm.employees"></employees-list>
+  <employees-list
+    employees-list="homePageVm.employees"
+    filter="homePageVm.filter"
+  ></employees-list>
 
   <div class="c-dashboard__footer">
-    <button class="c-button">
-      Load More
-    </button>
+    <button class="c-button">Load More</button>
   </div>
 </div>

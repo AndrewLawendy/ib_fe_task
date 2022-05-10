@@ -1,4 +1,5 @@
-angular.module('appModule')
+angular
+  .module('appModule')
   .config(($locationProvider) => {
     $locationProvider.html5Mode({
       enabled: true,
@@ -8,10 +9,11 @@ angular.module('appModule')
     $stateProvider
       .state({
         name: 'app',
-        url: '/',
+        url: '/?filter',
         templateUrl: './pages/home-page/home-page.html',
         controller: 'homeController',
         controllerAs: 'homePageVm',
+        reloadOnSearch: false,
       })
       .state({
         name: 'team-performance',

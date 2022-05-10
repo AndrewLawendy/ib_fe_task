@@ -1,17 +1,27 @@
-angular
-  .module('appModule')
-  .controller('homeController', homePageController);
+angular.module('appModule').controller('homeController', homePageController);
 
-function homePageController(Employees) {
+function homePageController(Employees, $scope, $stateParams, $location) {
   const homePageVm = this;
   homePageVm.employees = [];
+  homePageVm.filter = $stateParams.filter;
 
-  activate();
+  homePageVm.$onInit = function () {
+    homePageVm.activate();
+  };
 
-  function activate() {
-    Employees.getEmployees()
-      .then(({ data }) => {
-        homePageVm.employees = homePageVm.employees.concat(data.employees);
-      });
-  }
+  homePageVm.activate = function () {
+    Employees.getEmployees().then(({ data }) => {
+      homePageVm.employees = homePageVm.employees.concat(data.employees);
+    });
+  };
+
+  /**
+   *
+   * @param {string} filter
+   */
+  homePageVm.updateFilter = function (filter) {
+    homePageVm.filter = filter;
+    $location.search({ filter });
+    $scope.$apply();
+  };
 }
