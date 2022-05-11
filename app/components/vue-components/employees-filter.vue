@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'EmployeesFilterComponent',
+  name: "EmployeesFilterComponent",
   props: {
     update: Function,
     filter: String,
@@ -21,7 +21,7 @@ export default {
 
   methods: {
     clear() {
-      this.filterInput = '';
+      this.filterInput = "";
       this.update();
     },
 
