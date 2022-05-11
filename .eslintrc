@@ -1,15 +1,18 @@
 {
+  "plugins": ["prettier"],
   "extends": "airbnb-base/legacy",
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module"
   },
   "rules": {
+    "prettier/prettier": ["error", { "singleQuote": false }],
     "operator-linebreak": [
       "error",
       "after",
       { "overrides": { "?": "ignore", ":": "ignore" } }
     ],
+    "quotes": ["error", "double"],
     "func-names": "off",
     "no-param-reassign": "off",
     "default-case": "off",
