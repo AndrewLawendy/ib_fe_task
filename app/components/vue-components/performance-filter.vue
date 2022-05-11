@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 import moment from "moment";
 
 import { getChart } from "../../services/vue-services/getChart";
@@ -41,13 +42,12 @@ export default {
   },
 
   methods: {
+    ...mapMutations(["updateChartData"]),
     getChartData() {
-      const _this = this;
-
       getChart("https://fe-task.getsandbox.com/performance").then(
         (response) => {
           initialChartData = response;
-          _this.$store.commit("updateChartData", response);
+          this.updateChartData(response);
         }
       );
     },
@@ -57,7 +57,7 @@ export default {
         return date_ms >= startDate && date_ms <= endDate;
       });
 
-      this.$store.commit("updateChartData", filteredData);
+      this.updateChartData(filteredData);
     },
 
     onDateChange() {
