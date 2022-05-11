@@ -2,7 +2,7 @@
   "plugins": ["prettier"],
   "extends": "airbnb-base/legacy",
   "parserOptions": {
-    "ecmaVersion": 6,
+    "ecmaVersion": 8,
     "sourceType": "module"
   },
   "rules": {
@@ -37,7 +37,8 @@
     "jQuery": true,
     "$": true,
     "_": true,
-    "lodash": true
+    "lodash": true,
+    "jest": true
   },
   "env": {
     "browser": true,

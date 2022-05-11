@@ -18,7 +18,12 @@
     "@babel/preset-env": "^7.8.7",
     "@commitlint/cli": "^16.2.4",
     "@commitlint/config-conventional": "^16.2.4",
+    "@vue/compiler-dom": "^3.2.33",
+    "@vue/test-utils": "1",
+    "@vue/vue2-jest": "^27.0.0",
     "angularjs-template-loader": "^0.1.2",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "27.5.1",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
     "eslint": "^8.6.0",
@@ -35,6 +40,7 @@
     "husky": "^8.0.1",
     "imports-loader": "^0.8.0",
     "jest": "^27.4.7",
+    "jsdom": "^19.0.0",
     "lint-staged": "^12.4.1",
     "node-sass": "^7.0.1",
     "prettier": "^2.6.2",
@@ -50,7 +56,8 @@
     "start": "webpack-dev-server --open --progress",
     "lint": "eslint --fix --cache .",
     "pretty": "prettier  --write .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "jest"
   },
   "config": {
     "commitizen": {
@@ -69,5 +76,29 @@
     "*.{js,vue,css,html,md,yml,json,eslintrc,prettierrc}": [
       "yarn pretty"
     ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.vue$": "@vue/vue2-jest"
+    },
+    "testEnvironment": "jsdom"
   }
 }

@@ -24,7 +24,7 @@ import moment from "moment";
 
 import { getChart } from "../../services/vue-services/getChart";
 
-let initialChartData;
+let initialChartData = [];
 
 export default {
   name: "PerformanceFilter",
