@@ -17,6 +17,11 @@
 .c-dashboard {
   margin: 8px 16px;
 
+  .c-filters__container {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
   .c-dashboard__header {
     display: flex;
     justify-content: center;
