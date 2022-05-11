@@ -10,13 +10,34 @@
 </template>
 
 <script>
-import PerformanceChartComponent from '../components/vue-components/performance-chart.vue';
-import PerformanceFilterComponent from '../components/vue-components/performance-filter.vue';
+import Vue from "vue";
+import Vuex from "vuex";
+
+import PerformanceChartComponent from "../components/vue-components/performance-chart.vue";
+import PerformanceFilterComponent from "../components/vue-components/performance-filter.vue";
+
+Vue.use(Vuex);
+
+const store = new Vuex.Store({
+  state() {
+    return {
+      chartData: [],
+    };
+  },
+  mutations: {
+    updateChartData(state, data) {
+      state.chartData = data;
+    },
+  },
+});
+
 export default {
-  name: 'AboutPageComponent',
+  name: "AboutPageComponent",
   components: {
     PerformanceChartComponent,
     PerformanceFilterComponent,
   },
+
+  store,
 };
 </script>

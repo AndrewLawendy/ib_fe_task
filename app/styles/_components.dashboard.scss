@@ -18,8 +18,16 @@
   margin: 8px 16px;
 
   .c-filters__container {
-    display: flex;
-    justify-content: space-evenly;
+    text-align: center;
+
+    .c-filters__dates {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .c-range_error {
+      color: red;
+    }
   }
 
   .c-dashboard__header {
