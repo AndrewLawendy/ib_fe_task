@@ -63,10 +63,10 @@
     ]
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "*.{js,vue}": [
       "yarn lint"
     ],
-    "*.{js,jsx,ts,tsx,css,html,md,yml,json,eslintrc,prettierrc}": [
+    "*.{js,vue,css,html,md,yml,json,eslintrc,prettierrc}": [
       "yarn pretty"
     ]
   }
