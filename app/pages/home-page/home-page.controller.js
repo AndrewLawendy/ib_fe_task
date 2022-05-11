@@ -1,4 +1,4 @@
-angular.module('appModule').controller('homeController', homePageController);
+angular.module("appModule").controller("homeController", homePageController);
 
 function homePageController(Employees, $scope, $stateParams, $location) {
   const homePageVm = this;

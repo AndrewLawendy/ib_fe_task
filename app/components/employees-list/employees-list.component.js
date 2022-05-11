@@ -1,10 +1,10 @@
-angular.module('appModule').component('employeesList', {
-  templateUrl: 'components/employees-list/employees-list.html',
+angular.module("appModule").component("employeesList", {
+  templateUrl: "components/employees-list/employees-list.html",
   controller: EmployeesListComponent,
-  controllerAs: 'EmployeesListComponentVm',
+  controllerAs: "EmployeesListComponentVm",
   bindings: {
-    employeesList: '<',
-    filter: '<',
+    employeesList: "<",
+    filter: "<",
   },
 });
 
