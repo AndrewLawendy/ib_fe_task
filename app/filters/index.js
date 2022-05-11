@@ -1,6 +1,6 @@
-import { filterHighlight } from './filterHighlight';
+import { filterHighlight } from "./filterHighlight";
 
-const filtersModule = angular.module('appModule.filters', [
+const filtersModule = angular.module("appModule.filters", [
   filterHighlight.name,
 ]);
 
