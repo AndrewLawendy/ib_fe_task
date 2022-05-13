@@ -13,6 +13,16 @@
   ></employees-list>
 
   <div class="c-dashboard__footer">
-    <button class="c-button">Load More</button>
+    <button
+      class="c-button"
+      ng-click="homePageVm.loadMoreEmployees()"
+      ng-disabled="homePageVm.isFetchingEmployees"
+      ng-if="homePageVm.canLoadMoreEmployees"
+    >
+      <progress-circular
+        ng-if="homePageVm.isFetchingEmployees"
+      ></progress-circular>
+      Load More
+    </button>
   </div>
 </div>

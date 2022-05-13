@@ -61,4 +61,28 @@
   min-width: 120px;
   padding: 0 16px;
   border-radius: 4px;
+
+  &:disabled {
+    background-color: lighten(#0099ff, 30%);
+    cursor: not-allowed;
+  }
+}
+
+.c-progress_circular {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #fff;
+  border-right-color: #0099ff;
+  border-radius: 50%;
+  animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

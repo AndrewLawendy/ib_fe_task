@@ -1,5 +1,6 @@
 import { shallowMount, createLocalVue } from "@vue/test-utils";
 import Vuex from "vuex";
+import moment from "moment";
 import PerformanceFilterComponent from "./performance-filter.vue";
 
 const localVue = createLocalVue();
@@ -37,6 +38,7 @@ describe("Performance Filter", () => {
       localVue,
     });
     const date = wrapper.find("input");
+    date.element.value = moment().add(1, "day").format("YYYY-MM-DD");
     await date.trigger("input");
 
     expect(mutations.updateChartData).not.toHaveBeenCalled();
