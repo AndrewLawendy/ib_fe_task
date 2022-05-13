@@ -61,6 +61,11 @@
   min-width: 120px;
   padding: 0 16px;
   border-radius: 4px;
+
+  &:disabled {
+    background-color: lighten(#0099ff, 30%);
+    cursor: not-allowed;
+  }
 }
 
 .c-progress_circular {
