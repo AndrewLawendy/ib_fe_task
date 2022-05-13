@@ -16,7 +16,16 @@
     "func-names": "off",
     "no-param-reassign": "off",
     "default-case": "off",
-    "comma-dangle": ["error", "always-multiline"],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "only-multiline"
+      }
+    ],
     "consistent-return": "off",
     "new-cap": "off",
     "no-underscore-dangle": "off",
