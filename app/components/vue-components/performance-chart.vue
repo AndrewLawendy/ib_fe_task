@@ -101,6 +101,22 @@ export default {
             },
           },
         ],
+        visualMap: [
+          {
+            type: "piecewise",
+            top: 50,
+            right: 10,
+            inRange: {
+              color: ["red", "yellow", "green"],
+            },
+
+            pieces: [
+              { min: 0, max: 50 },
+              { min: 50, max: 80 },
+              { min: 80, max: 100 },
+            ],
+          },
+        ],
       };
     },
 
