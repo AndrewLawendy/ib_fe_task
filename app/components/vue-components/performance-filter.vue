@@ -31,7 +31,7 @@ export default {
 
   data() {
     return {
-      startDate: moment().format("YYYY-MM-DD"),
+      startDate: "",
       endDate: moment().format("YYYY-MM-DD"),
       invalidRange: false,
     };
@@ -61,7 +61,7 @@ export default {
     },
 
     onDateChange() {
-      if (moment(this.startDate).isSameOrAfter(this.endDate)) {
+      if (moment(this.startDate).isAfter(this.endDate)) {
         this.invalidRange = true;
       } else {
         this.invalidRange = false;

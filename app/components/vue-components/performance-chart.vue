@@ -54,7 +54,14 @@ export default {
           transitionDuration: 0,
           confine: false,
           hideDelay: 0,
-          padding: 0,
+          backgroundColor: "#16253f",
+          textStyle: {
+            color: "#fff",
+          },
+          formatter: ([axis]) => {
+            return `<p style="text-align: center; margin: 0; font-weight: bold">${axis.axisValue}</p>
+            ${axis.marker} Team Performance Index: ${axis.value}%`;
+          },
         },
         grid: {
           left: "30px",
@@ -92,6 +99,22 @@ export default {
             lineStyle: {
               width: 2,
             },
+          },
+        ],
+        visualMap: [
+          {
+            type: "piecewise",
+            top: 50,
+            right: 10,
+            inRange: {
+              color: ["red", "yellow", "green"],
+            },
+
+            pieces: [
+              { min: 0, max: 50 },
+              { min: 50, max: 80 },
+              { min: 80, max: 100 },
+            ],
           },
         ],
       };
