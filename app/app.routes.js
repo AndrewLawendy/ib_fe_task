@@ -22,7 +22,7 @@ angular
       })
       .state({
         name: "not-found",
-        templateUrl: "./pages/not-found/not-found.html",
+        template: "<v-not-found></v-not-found>",
       });
 
     $urlRouterProvider.otherwise(function ($injector) {

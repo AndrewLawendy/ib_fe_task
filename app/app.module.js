@@ -7,6 +7,7 @@ import filtersModule from "./filters";
 import PerformancePageComponent from "./pages/performance-page.vue";
 import PerformanceChartComponent from "./components/vue-components/performance-chart.vue";
 import EmployeesFilterComponent from "./components/vue-components/employees-filter.vue";
+import NotFoundComponent from "./components/vue-components/not-found.vue";
 
 const app = angular.module("appModule", [
   "ui.router",
@@ -30,5 +31,11 @@ angular
       Vue.component("performanceChartComponent", PerformanceChartComponent)
     );
   });
+
+angular.module("appModule").directive("vNotFound", (createVueComponent) => {
+  return createVueComponent(
+    Vue.component("notFoundComponent", NotFoundComponent)
+  );
+});
 
 app.value("EmployeesFilter", EmployeesFilterComponent);
