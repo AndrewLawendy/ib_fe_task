@@ -5,7 +5,7 @@ angular
       enabled: true,
     });
   })
-  .config(($stateProvider) => {
+  .config(($stateProvider, $urlRouterProvider) => {
     $stateProvider
       .state({
         name: "app",
@@ -19,5 +19,14 @@ angular
         name: "team-performance",
         url: "/team-performance",
         template: "<v-performance-page></v-performance-page>",
+      })
+      .state({
+        name: "not-found",
+        templateUrl: "./pages/not-found/not-found.html",
       });
+
+    $urlRouterProvider.otherwise(function ($injector) {
+      const $state = $injector.get("$state");
+      $state.go("not-found");
+    });
   });
