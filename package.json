@@ -25,6 +25,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "27.5.1",
     "babel-loader": "^8.2.3",
+    "babel-plugin-angularjs-annotate": "^0.10.0",
     "css-loader": "^6.5.1",
     "eslint": "^8.6.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -54,7 +55,7 @@
     "webpack-merge": "^5.8.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.js --open --progress",
+    "start": "webpack-dev-server --config webpack.prod.js --open --progress",
     "build": "webpack --config webpack.prod.js --progress",
     "lint": "eslint --fix --cache .",
     "pretty": "prettier --ignore-path .eslintignore --write .",
@@ -89,6 +90,9 @@
           }
         }
       ]
+    ],
+    "plugins": [
+      "angularjs-annotate"
     ]
   },
   "jest": {

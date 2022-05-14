@@ -1,11 +1,15 @@
 angular
   .module("appModule")
-  .config(($locationProvider) => {
+  .config(function ($locationProvider) {
+    "ngInject";
+
     $locationProvider.html5Mode({
       enabled: true,
     });
   })
-  .config(($stateProvider, $urlRouterProvider) => {
+  .config(function ($stateProvider, $urlRouterProvider) {
+    "ngInject";
+
     $stateProvider
       .state({
         name: "app",
