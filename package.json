@@ -57,7 +57,7 @@
     "start": "webpack-dev-server --config webpack.dev.js --open --progress",
     "build": "webpack --config webpack.prod.js --progress",
     "lint": "eslint --fix --cache .",
-    "pretty": "prettier  --write .",
+    "pretty": "prettier --ignore-path .eslintignore --write .",
     "prepare": "husky install",
     "test": "jest"
   },
