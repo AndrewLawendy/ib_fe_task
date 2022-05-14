@@ -1,6 +1,8 @@
 angular.module("appModule").controller("homeController", homePageController);
 
 function homePageController(Employees, $scope, $stateParams, $location) {
+  "ngInject";
+
   const homePageVm = this;
   homePageVm.employees = [];
   homePageVm.filter = $stateParams.filter;

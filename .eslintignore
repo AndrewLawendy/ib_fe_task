@@ -1,0 +1,16 @@
+# Dependency directory
+node_modules
+
+# App packaged
+examples
+dist
+.tmp
+
+# Package.json
+package.json
+
+# Lock file
+yarn.lock
+
+# Markdown
+README.md

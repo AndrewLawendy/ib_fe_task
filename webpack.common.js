@@ -4,11 +4,9 @@ const ESLintPlugin = require("eslint-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 module.exports = {
-  mode: "development",
   entry: {
     index: "./index.js",
   },
-  devtool: "inline-source-map",
   plugins: [
     new HtmlWebpackPlugin({
       title: "Development",
@@ -22,16 +20,6 @@ module.exports = {
     }),
     new VueLoaderPlugin(),
   ],
-  devServer: {
-    static: "./dist",
-    hot: true,
-    historyApiFallback: true,
-  },
-  output: {
-    filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "dist"),
-    clean: true,
-  },
   module: {
     rules: [
       {
@@ -76,7 +64,7 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "styles/[name].css",
+              name: "styles/[name].[contenthash].css",
             },
           },
           {

@@ -19,6 +19,8 @@ const app = angular.module("appModule", [
 angular
   .module("appModule")
   .directive("vPerformancePage", (createVueComponent) => {
+    "ngInject";
+
     return createVueComponent(
       Vue.component("performancePageComponent", PerformancePageComponent)
     );
@@ -27,12 +29,16 @@ angular
 angular
   .module("appModule")
   .directive("vPerformanceChart", (createVueComponent) => {
+    "ngInject";
+
     return createVueComponent(
       Vue.component("performanceChartComponent", PerformanceChartComponent)
     );
   });
 
 angular.module("appModule").directive("vNotFound", (createVueComponent) => {
+  "ngInject";
+
   return createVueComponent(
     Vue.component("notFoundComponent", NotFoundComponent)
   );
